@@ -1,4 +1,6 @@
-﻿namespace ExampleAppJan24
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace ExampleAppJan24
 {
     enum WeekDay
     {
@@ -99,7 +101,7 @@
             WeekDay vandaag = WeekDay.MAANDAG;
             Console.WriteLine(vandaag); */
 
-            VerkeerslichtStatus kleur = VerkeerslichtStatus.GROEN;
+            /*VerkeerslichtStatus kleur = VerkeerslichtStatus.GROEN;
             bool dichtbij = false;
 
             if(VerkeerslichtStatus.GROEN == kleur)
@@ -182,7 +184,27 @@
             else if(x == 6)
             {
                 Console.WriteLine("is 6");
+            }*/
+
+            int teller = 0;
+            while (teller < 20)
+            {
+                Console.WriteLine(teller);
+                teller++;
             }
+
+            int x;
+            do
+            {
+                x = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(x);
+            } while (x > 300);
+
+            for(int i = 0;  i < 20; i++)
+            {
+                Console.WriteLine(i);
+            }
+
         }
     }
 }
