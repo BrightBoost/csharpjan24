@@ -11,6 +11,11 @@
         ZONDAG
     }
 
+    enum VerkeerslichtStatus
+    {
+        GROEN, ORANJE, ROOD
+    }
+
     internal class Program
     {
         static void Main(string[] args)
@@ -41,7 +46,7 @@
             int? x2 = null; //compileert wel, nu is het een nullable
 
             bool zelfde = age == 25;
-            Console.WriteLine(zelfde);*/
+            Console.WriteLine(zelfde);
 
             int nummer = 78;
             if (nummer > 0)
@@ -62,13 +67,13 @@
 
             }
 
-            /*Bijvoorbeeld toegangsprijs museum
-            Gebruik readline om een leeftijd te krijgen
-            Bepaal de toegangsprijs (WriteLine result)
-            - als jonger dan 3 dan gratis
-            - als tussen 3 en 18 dan 10,-
-            - als ouder dan 18 dan 15,-
-            */
+            //Bijvoorbeeld toegangsprijs museum
+            //Gebruik readline om een leeftijd te krijgen
+            //Bepaal de toegangsprijs (WriteLine result)
+            //- als jonger dan 3 dan gratis
+            //- als tussen 3 en 18 dan 10,-
+            //- als ouder dan 18 dan 15,-
+            
             int leeftijd = Convert.ToInt32(Console.ReadLine());
             int prijs;
             if(leeftijd < 3 && leeftijd >= 0)
@@ -92,7 +97,35 @@
             int x, y = 0; // 2 variabelen gedeclareerd, 1 variabele geinitialiseerd
 
             WeekDay vandaag = WeekDay.MAANDAG;
-            Console.WriteLine(vandaag);
+            Console.WriteLine(vandaag); */
+
+            VerkeerslichtStatus kleur = VerkeerslichtStatus.GROEN;
+            bool dichtbij = false;
+
+            if(VerkeerslichtStatus.GROEN == kleur)
+            {
+                Console.WriteLine("Gewoon normaal doorrijden.");
+            }
+            else if(VerkeerslichtStatus.ORANJE == kleur && dichtbij)
+            {
+                Console.WriteLine("Gewoon normaal doorrijden.");
+            }
+            else if (VerkeerslichtStatus.ORANJE == kleur && !dichtbij)
+            {
+                Console.WriteLine("Remmen.");
+            }
+            else if (VerkeerslichtStatus.ROOD == kleur && dichtbij)
+            {
+                Console.WriteLine("Stoppen.");
+            }
+            else if (VerkeerslichtStatus.ROOD == kleur && !dichtbij)
+            {
+                Console.WriteLine("Voorbereiden op stoppen.");
+            }
+            else
+            {
+                Console.WriteLine("Doe voorzichtig. Succes.");
+            }
         }
     }
 }
