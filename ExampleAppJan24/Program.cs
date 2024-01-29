@@ -13,7 +13,7 @@
 
     enum VerkeerslichtStatus
     {
-        GROEN, ORANJE, ROOD
+        GROEN, ORANJE, ROOD, DEFECT
     }
 
     internal class Program
@@ -127,7 +127,27 @@
                 Console.WriteLine("Doe voorzichtig. Succes.");
             }
 
-            switch(kleur)
+            string inputKleur = Console.ReadLine();
+
+            VerkeerslichtStatus gekozenKleur;
+
+            switch(inputKleur.ToLower())
+            {
+                case "rood":
+                    gekozenKleur = VerkeerslichtStatus.ROOD;
+                    break;
+                case "oranje":
+                    gekozenKleur = VerkeerslichtStatus.ORANJE;
+                    break;
+                case "groen":
+                    gekozenKleur = VerkeerslichtStatus.GROEN;
+                    break;
+                default:
+                    gekozenKleur = VerkeerslichtStatus.DEFECT;
+                    break;
+            }
+
+            switch(gekozenKleur)
             {
                 case VerkeerslichtStatus.GROEN:
                     string message = dichtbij ? "rijden" : "rijden"; // ternary statement
