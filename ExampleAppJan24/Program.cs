@@ -126,6 +126,43 @@
             {
                 Console.WriteLine("Doe voorzichtig. Succes.");
             }
+
+            switch(kleur)
+            {
+                case VerkeerslichtStatus.GROEN:
+                    string message = dichtbij ? "rijden" : "rijden"; // ternary statement
+                    Console.WriteLine(message);
+                    break;
+                case VerkeerslichtStatus.ORANJE:
+                    Console.WriteLine("Voorzichtig");
+                    break;
+                case VerkeerslichtStatus.ROOD:
+                    Console.WriteLine("Stoppen");
+                    break;
+                default:
+                    Console.WriteLine("Voorzichtig doen.");
+                    break;
+            }
+
+            int x = 78;
+            switch (x)
+            {
+                case 5:
+                    Console.WriteLine("is 5");
+                    break;
+                case 6:
+                    Console.WriteLine("is 6");
+                    break;
+            }
+
+            if(x == 5)
+            {
+                Console.WriteLine("is 5");
+            } 
+            else if(x == 6)
+            {
+                Console.WriteLine("is 6");
+            }
         }
     }
 }
