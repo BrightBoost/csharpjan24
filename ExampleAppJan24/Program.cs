@@ -172,7 +172,7 @@ namespace ExampleAppJan24
 
             
 
-            MonkeyPrint(1000);
+            MonkeyPrint(10);
             Console.WriteLine(GetNr());
 
             
