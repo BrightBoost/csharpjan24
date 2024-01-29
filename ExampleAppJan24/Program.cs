@@ -2,22 +2,6 @@
 
 namespace ExampleAppJan24
 {
-    enum WeekDay
-    {
-        MAANDAG,
-        DINSDAG,
-        WOENSDAG,
-        DONDERDAG,
-        VRIJDAG,
-        ZATERDAG,
-        ZONDAG
-    }
-
-    enum VerkeerslichtStatus
-    {
-        GROEN, ORANJE, ROOD, DEFECT
-    }
-
     internal class Program
     {
         static void Main(string[] args)
@@ -186,6 +170,31 @@ namespace ExampleAppJan24
                 Console.WriteLine("is 6");
             }*/
 
+            
+
+            MonkeyPrint(1000);
+            Console.WriteLine(GetNr());
+
+            
+
+
+        }
+
+        public static int GetNr()
+        {
+            return 67;
+        }
+
+        public static void MonkeyPrint(int keer)
+        {
+            for (int i = keer; i > 0; i--)
+            {
+                Console.WriteLine(i + " Little monkey" + ((i > 1) ? "s" : "") + " jumping on a bed," + ((i > 1) ? "one" : "he") + " jumped up and bumped his head, Mom called the Doctor and the doctor said........'no more monkeys jumping on a bed'.");
+            }
+        }
+
+        public static void ExplainLoops()
+        {
             int teller = 0;
             while (teller < 20)
             {
@@ -200,11 +209,10 @@ namespace ExampleAppJan24
                 Console.WriteLine(x);
             } while (x > 300);
 
-            for(int i = 0;  i < 20; i++)
+            for (int i = 0; i < 20; i++)
             {
                 Console.WriteLine(i);
             }
-
         }
     }
 }
