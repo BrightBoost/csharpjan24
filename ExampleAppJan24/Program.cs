@@ -1,5 +1,16 @@
 ﻿namespace ExampleAppJan24
 {
+    enum WeekDay
+    {
+        MAANDAG,
+        DINSDAG,
+        WOENSDAG,
+        DONDERDAG,
+        VRIJDAG,
+        ZATERDAG,
+        ZONDAG
+    }
+
     internal class Program
     {
         static void Main(string[] args)
@@ -51,6 +62,37 @@
 
             }
 
+            /*Bijvoorbeeld toegangsprijs museum
+            Gebruik readline om een leeftijd te krijgen
+            Bepaal de toegangsprijs (WriteLine result)
+            - als jonger dan 3 dan gratis
+            - als tussen 3 en 18 dan 10,-
+            - als ouder dan 18 dan 15,-
+            */
+            int leeftijd = Convert.ToInt32(Console.ReadLine());
+            int prijs;
+            if(leeftijd < 3 && leeftijd >= 0)
+            {
+                prijs = 0;
+            }
+            else if(leeftijd < 0)
+            {
+                throw new ArgumentException("Leeftijd moet groter zijn dan 0.");
+            }
+            else if(leeftijd < 18)
+            {
+                prijs = 10;
+            }
+            else
+            {
+                prijs = 15;
+            }
+            Console.WriteLine("Toegang is " + prijs);
+
+            int x, y = 0; // 2 variabelen gedeclareerd, 1 variabele geinitialiseerd
+
+            WeekDay vandaag = WeekDay.MAANDAG;
+            Console.WriteLine(vandaag);
         }
     }
 }
