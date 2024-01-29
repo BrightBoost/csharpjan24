@@ -175,14 +175,34 @@ namespace ExampleAppJan24
             MonkeyPrint(10);
             Console.WriteLine(GetNr());
 
-            
-
-
         }
 
         public static int GetNr()
         {
             return 67;
+        }
+
+        public static void ExampleBreak()
+        {
+            while(true)
+            {
+                int x = Convert.ToInt32(Console.ReadLine());
+                if(x == GetNr())
+                {
+                    break;
+                }
+            }
+
+            // ik heb een sterke voorkeur voor
+            /*bool found = false;
+            while (!found)
+            {
+                int x = Convert.ToInt32(Console.ReadLine());
+                if (x == GetNr())
+                {
+                    found = true;
+                }
+            }*/
         }
 
         public static void MonkeyPrint(int keer)
